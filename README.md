@@ -3,7 +3,6 @@
 <body>
     <h1>📋 Mi Lista de Tareas (Laravel + TailwindCSS)</h1>
     <p>Este proyecto es una <strong>aplicación web de lista de tareas</strong> construida con Laravel y TailwindCSS. Permite agregar, editar y eliminar tareas, y tiene una interfaz visual agradable y moderna.</p>
-
     <h2>🔹 Requisitos previos</h2>
     <ul>
         <li><a href="https://www.php.net/">PHP</a> >= 8.1</li>
@@ -12,7 +11,6 @@
         <li><a href="https://www.npmjs.com/">npm</a></li>
         <li><a href="https://mariadb.org/">MariaDB o MySQL</a></li>
     </ul>
-
     <h2>🔹 Instalación del proyecto</h2>
     <ol>
         <li><strong>Clonar el repositorio:</strong>
