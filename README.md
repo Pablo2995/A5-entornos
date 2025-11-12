@@ -1,40 +1,5 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
 <html lang="es">
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            background-color: #f9fafb;
-        }
-        h1, h2, h3 {
-            color: #4c51bf;
-        }
-        code, pre {
-            background-color: #edf2f7;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-        pre {
-            overflow-x: auto;
-            padding: 10px;
-        }
-        a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            margin-bottom: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-    </style>
-</head>
 <body>
     <h1>📋 Mi Lista de Tareas (Laravel + TailwindCSS)</h1>
     <p>Este proyecto es una <strong>aplicación web de lista de tareas</strong> construida con Laravel y TailwindCSS. Permite agregar, editar y eliminar tareas, y tiene una interfaz visual agradable y moderna.</p>
