@@ -32,6 +32,27 @@ DB_PASSWORD=MiPassword123
 APP_ENV=local
 APP_DEBUG=true
 APP_KEY=</code></pre>
+        <h2>🔹 Crear la base de datos</h2>
+    <ol>
+        <li>Acceder a MariaDB/MySQL desde la terminal:</li>
+        <pre><code>mysql -u laraveluser -p</code></pre>
+        <p>Se te pedirá la contraseña: <code>MiPassword123</code></p>
+        <li>Crear la base de datos (si no existe):</li>
+        <pre><code>CREATE DATABASE laravel;</code></pre>
+        <li>Seleccionar la base de datos:</li>
+        <pre><code>USE laravel;</code></pre>
+    </ol>
+    <h2>🔹 Ver las tablas existentes</h2>
+    <pre><code>SHOW TABLES;</code></pre>
+    <p>Ejemplo de tablas generadas por Laravel:</p>
+    <ul>
+        <li>failed_jobs</li>
+        <li>migrations</li>
+        <li>password_reset_tokens</li>
+        <li>personal_access_tokens</li>
+        <li>tareas</li>
+        <li>users</li>
+    </ul>
         </li>
         <li><strong>Generar clave de la aplicación:</strong>
             <pre><code>php artisan key:generate</code></pre>
