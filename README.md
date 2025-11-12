@@ -31,7 +31,7 @@ DB_USERNAME=laraveluser
 DB_PASSWORD=MiPassword123
 APP_ENV=local
 APP_DEBUG=true
-APP_KEY=base64:Lg78dNRpEBiG5cONtn9rHLP+V0VBxf5cfB9RLVaGnP4=</code></pre>
+APP_KEY=</code></pre>
         </li>
         <li><strong>Generar clave de la aplicación:</strong>
             <pre><code>php artisan key:generate</code></pre>
