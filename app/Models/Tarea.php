@@ -9,5 +9,9 @@ class Tarea extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'descripcion'];
+    protected $fillable = [
+        'titulo',
+        'descripcion',
+        'completed',
+    ];
 }
