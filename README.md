@@ -37,7 +37,6 @@ DB_PASSWORD=</code></pre>
             <pre><code>php artisan migrate</code></pre>
         </li>
     </ol>
-
     <h2>🔹 Instalación de dependencias de Node.js y TailwindCSS</h2>
     <ol>
         <li><strong>Instalar dependencias de Node.js:</strong>
@@ -52,11 +51,9 @@ DB_PASSWORD=</code></pre>
             Esto crea los archivos compilados en <code>public/build/</code> y ya no necesitas ejecutar <code>npm run dev</code>.
         </li>
     </ol>
-
     <h2>🔹 Levantar el servidor de Laravel</h2>
     <pre><code>php artisan serve</code></pre>
     <p>Por defecto, la aplicación estará disponible en: <a href="http://localhost:8000/tareas">http://localhost:8000/tareas</a></p>
-
     <h2>🔹 Funcionalidades</h2>
     <ul>
         <li>Crear nuevas tareas</li>
@@ -65,7 +62,6 @@ DB_PASSWORD=</code></pre>
         <li>Interfaz moderna con TailwindCSS</li>
         <li>Layout responsivo (compatible con móviles y desktop)</li>
     </ul>
-
     <h2>🔹 Estructura del proyecto</h2>
     <pre><code>
 app/             -> Lógica de Laravel
@@ -73,7 +69,6 @@ resources/views/ -> Vistas Blade
 public/css/      -> CSS compilado por Tailwind
 routes/web.php   -> Rutas de la aplicación
     </code></pre>
-
     <h2>🔹 Créditos</h2>
     <ul>
         <li>Laravel Framework</li>
