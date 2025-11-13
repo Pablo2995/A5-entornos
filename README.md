@@ -115,12 +115,9 @@ routes/web.php   -> Rutas de la aplicación
 <body>
   <div class="container">
     <h1>Video demo explicativo de Laravel</h1>
-    <p>Puedes ver el video explicativo desde Google Drive en el siguiente enlace o reproducirlo (vista previa) si tu navegador lo permite.</p>
+    <p>Puedes ver el video explicativo desde Google Drive en el siguiente enlace.</p>
     <!-- Enlace directo -->
     <a class="link" href="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir video en Google Drive</a>
-    <!-- Iframe de vista previa de Google Drive (usa /preview) -->
-      <br>
-    <iframe src="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/preview" allow="autoplay; encrypted-media" title="Demo Laravel - Video"></iframe>
   </div>
 </body>
 </html>
