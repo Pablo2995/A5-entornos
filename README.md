@@ -110,17 +110,8 @@ routes/web.php   -> Rutas de la aplicación
         <li>Inspiración: Proyecto de lista de tareas personalizado</li>
     </ul>
 </body>
-<<<<<<< HEAD
-</html>
-=======
-</html>
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Demo Laravel - Video explicativo</title>
-</head>
 <body>
   <div class="container">
     <h1>Video demo explicativo de Laravel</h1>
