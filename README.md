@@ -120,15 +120,6 @@ routes/web.php   -> Rutas de la aplicación
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Demo Laravel - Video explicativo</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:40px;background:#f7f9fb;color:#0f172a}
-    .container{max-width:780px;margin:0 auto;background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 24px rgba(15,23,42,0.08)}
-    h1{font-size:1.8rem;margin:0 0 12px}
-    p{margin:0 0 18px}
-    .link{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #e6eef8;background:#eef6ff}
-    .note{font-size:0.9rem;color:#475569;margin-top:12px}
-    iframe{width:100%;height:420px;border:0;border-radius:8px;margin-top:14px}
-  </style>
 </head>
 <body>
   <div class="container">
