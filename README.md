@@ -1,4 +1,9 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
+<p align="center">
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
+</p>
+
 <html lang="es">
 <body>
     <h1>📋 Mi Lista de Tareas (Laravel + TailwindCSS)</h1>
@@ -30,16 +35,22 @@ DB_DATABASE=laravel
 DB_USERNAME=laraveluser
 DB_PASSWORD=MiPassword123
 APP_ENV=local
-APP_DEBUG=true
-APP_KEY=</code></pre>
-        <h2>🔹 Crear la base de datos</h2>
+APP_DEBUG=true</code></pre>
+        </li>
+    </ol>
+    <h2>🔹 Creación de la base de datos y usuario</h2>
     <ol>
-        <li>Acceder a MariaDB/MySQL desde la terminal:</li>
-        <pre><code>mysql -u laraveluser -p</code></pre>
-        <p>Se te pedirá la contraseña: <code>MiPassword123</code></p>
-        <li>Crear la base de datos (si no existe):</li>
+        <li><strong>Acceder a MariaDB/MySQL desde la terminal:</strong></li>
+        <pre><code>sudo mysql -u root -p</code></pre>
+        <li><strong>Crear la base de datos:</strong></li>
         <pre><code>CREATE DATABASE laravel;</code></pre>
-        <li>Seleccionar la base de datos:</li>
+        <li><strong>Crear el usuario y darle permisos:</strong></li>
+        <pre><code>CREATE USER 'laraveluser'@'localhost' IDENTIFIED BY 'MiPassword123';
+GRANT ALL PRIVILEGES ON laravel.* TO 'laraveluser'@'localhost';
+FLUSH PRIVILEGES;</code></pre>
+        <li><strong>Verificar acceso con el nuevo usuario:</strong></li>
+        <pre><code>mysql -u laraveluser -p</code></pre>
+        <li><strong>Seleccionar la base de datos:</strong></li>
         <pre><code>USE laravel;</code></pre>
     </ol>
     <h2>🔹 Ver las tablas existentes</h2>
@@ -53,7 +64,8 @@ APP_KEY=</code></pre>
         <li>tareas</li>
         <li>users</li>
     </ul>
-        </li>
+    <h2>🔹 Generar clave y migraciones</h2>
+    <ol>
         <li><strong>Generar clave de la aplicación:</strong>
             <pre><code>php artisan key:generate</code></pre>
         </li>
@@ -66,13 +78,11 @@ APP_KEY=</code></pre>
         <li><strong>Instalar dependencias de Node.js:</strong>
             <pre><code>npm install</code></pre>
         </li>
-        <li><strong>Para desarrollo, ejecutar el servidor de Vite:</strong>
+        <li><strong>Para desarrollo (actualización en tiempo real):</strong>
             <pre><code>npm run dev</code></pre>
-            Esto hará que TailwindCSS genere los estilos en tiempo real y tu página se actualice automáticamente cuando hagas cambios.
         </li>
-        <li><strong>Para producción (generar CSS final):</strong>
+        <li><strong>Para producción (CSS compilado):</strong>
             <pre><code>npm run build</code></pre>
-            Esto crea los archivos compilados en <code>public/build/</code> y ya no necesitas ejecutar <code>npm run dev</code>.
         </li>
     </ol>
     <h2>🔹 Levantar el servidor de Laravel</h2>
@@ -84,7 +94,7 @@ APP_KEY=</code></pre>
         <li>Editar tareas existentes</li>
         <li>Eliminar tareas</li>
         <li>Interfaz moderna con TailwindCSS</li>
-        <li>Layout responsivo (compatible con móviles y desktop)</li>
+        <li>Layout responsivo (móvil y escritorio)</li>
     </ul>
     <h2>🔹 Estructura del proyecto</h2>
     <pre><code>
@@ -97,12 +107,10 @@ routes/web.php   -> Rutas de la aplicación
     <ul>
         <li>Laravel Framework</li>
         <li>TailwindCSS</li>
-        <li>Inspiración: Mi propio diseño de lista de tareas</li>
+        <li>Inspiración: Proyecto de lista de tareas personalizado</li>
     </ul>
 </body>
 </html>
-
-
 
 
 
