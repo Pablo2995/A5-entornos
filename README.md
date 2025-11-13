@@ -138,7 +138,6 @@ routes/web.php   -> Rutas de la aplicación
     <a class="link" href="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir video en Google Drive</a>
     <!-- Iframe de vista previa de Google Drive (usa /preview) -->
     <iframe src="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/preview" allow="autoplay; encrypted-media" title="Demo Laravel - Video"></iframe>
-    <p class="note">Nota: GitHub renderiza README principalmente en Markdown. Si incluyes este HTML como archivo independiente (por ejemplo <code>README.html</code>) podrás subirlo al repositorio y enlazarlo desde el README principal. Para mostrarlo directamente en la página principal del repositorio, es recomendable usar <code>README.md</code> con un enlace al video.</p>
   </div>
 </body>
 </html>
@@ -148,4 +147,4 @@ routes/web.php   -> Rutas de la aplicación
 
 
 
->>>>>>> c217476ab9006ee5afeb1d377f20be86d1fe41e5
+
