@@ -118,4 +118,6 @@ routes/web.php   -> Rutas de la aplicación
 
 
 
+
+
 >>>>>>> c217476ab9006ee5afeb1d377f20be86d1fe41e5
