@@ -114,6 +114,37 @@ routes/web.php   -> Rutas de la aplicación
 </html>
 =======
 </html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Demo Laravel - Video explicativo</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:40px;background:#f7f9fb;color:#0f172a}
+    .container{max-width:780px;margin:0 auto;background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 24px rgba(15,23,42,0.08)}
+    h1{font-size:1.8rem;margin:0 0 12px}
+    p{margin:0 0 18px}
+    .link{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #e6eef8;background:#eef6ff}
+    .note{font-size:0.9rem;color:#475569;margin-top:12px}
+    iframe{width:100%;height:420px;border:0;border-radius:8px;margin-top:14px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Video demo explicativo de Laravel</h1>
+    <p>Puedes ver el video explicativo desde Google Drive en el siguiente enlace o reproducirlo (vista previa) si tu navegador lo permite.</p>
+
+    <!-- Enlace directo -->
+    <a class="link" href="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir video en Google Drive</a>
+
+    <!-- Iframe de vista previa de Google Drive (usa /preview) -->
+    <iframe src="https://drive.google.com/file/d/17CO-Gx-WpRx_KSeWJGqrc5seTQb6AO9s/preview" allow="autoplay; encrypted-media" title="Demo Laravel - Video"></iframe>
+
+    <p class="note">Nota: GitHub renderiza README principalmente en Markdown. Si incluyes este HTML como archivo independiente (por ejemplo <code>README.html</code>) podrás subirlo al repositorio y enlazarlo desde el README principal. Para mostrarlo directamente en la página principal del repositorio, es recomendable usar <code>README.md</code> con un enlace al video.</p>
+  </div>
+</body>
+</html>
 
 
 
