@@ -1,66 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
 </p>
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<html lang="es">
+<body>
+    <h1>📋 Mi Lista de Tareas (Laravel + TailwindCSS)</h1>
+    <p>Este proyecto es una <strong>aplicación web de lista de tareas</strong> construida con Laravel y TailwindCSS. Permite agregar, editar y eliminar tareas, y tiene una interfaz visual agradable y moderna.</p>
+    <h2>🔹 Requisitos previos</h2>
+    <ul>
+        <li><a href="https://www.php.net/">PHP</a> >= 8.1</li>
+        <li><a href="https://getcomposer.org/">Composer</a></li>
+        <li><a href="https://nodejs.org/">Node.js</a> >= 18</li>
+        <li><a href="https://www.npmjs.com/">npm</a></li>
+        <li><a href="https://mariadb.org/">MariaDB o MySQL</a></li>
+    </ul>
+    <h2>🔹 Instalación del proyecto</h2>
+    <ol>
+        <li><strong>Clonar el repositorio:</strong>
+            <pre><code>git clone https://github.com/Pablo2995/A5-entornos.git
+cd A5-entornos</code></pre>
+        </li>
+        <li><strong>Instalar dependencias de PHP:</strong>
+            <pre><code>composer install</code></pre>
+        </li>
+        <li><strong>Copiar archivo de entorno y configurar base de datos:</strong>
+            <pre><code>cp .env.example .env</code></pre>
+            Luego abre <code>.env</code> y configura los datos de tu base de datos:
+            <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laraveluser
+DB_PASSWORD=MiPassword123
+APP_ENV=local
+APP_DEBUG=true</code></pre>
+        </li>
+    </ol>
+    <h2>🔹 Creación de la base de datos y usuario</h2>
+    <ol>
+        <li><strong>Acceder a MariaDB/MySQL desde la terminal:</strong></li>
+        <pre><code>sudo mysql -u root -p</code></pre>
+        <li><strong>Crear la base de datos:</strong></li>
+        <pre><code>CREATE DATABASE laravel;</code></pre>
+        <li><strong>Crear el usuario y darle permisos:</strong></li>
+        <pre><code>CREATE USER 'laraveluser'@'localhost' IDENTIFIED BY 'MiPassword123';
+GRANT ALL PRIVILEGES ON laravel.* TO 'laraveluser'@'localhost';
+FLUSH PRIVILEGES;</code></pre>
+        <li><strong>Verificar acceso con el nuevo usuario:</strong></li>
+        <pre><code>mysql -u laraveluser -p</code></pre>
+        <li><strong>Seleccionar la base de datos:</strong></li>
+        <pre><code>USE laravel;</code></pre>
+    </ol>
+    <h2>🔹 Ver las tablas existentes</h2>
+    <pre><code>SHOW TABLES;</code></pre>
+    <p>Ejemplo de tablas generadas por Laravel:</p>
+    <ul>
+        <li>failed_jobs</li>
+        <li>migrations</li>
+        <li>password_reset_tokens</li>
+        <li>personal_access_tokens</li>
+        <li>tareas</li>
+        <li>users</li>
+    </ul>
+    <h2>🔹 Generar clave y migraciones</h2>
+    <ol>
+        <li><strong>Generar clave de la aplicación:</strong>
+            <pre><code>php artisan key:generate</code></pre>
+        </li>
+        <li><strong>Ejecutar migraciones para crear las tablas:</strong>
+            <pre><code>php artisan migrate</code></pre>
+        </li>
+    </ol>
+    <h2>🔹 Instalación de dependencias de Node.js y TailwindCSS</h2>
+    <ol>
+        <li><strong>Instalar dependencias de Node.js:</strong>
+            <pre><code>npm install</code></pre>
+        </li>
+        <li><strong>Para desarrollo (actualización en tiempo real):</strong>
+            <pre><code>npm run dev</code></pre>
+        </li>
+        <li><strong>Para producción (CSS compilado):</strong>
+            <pre><code>npm run build</code></pre>
+        </li>
+    </ol>
+    <h2>🔹 Levantar el servidor de Laravel</h2>
+    <pre><code>php artisan serve</code></pre>
+    <p>Por defecto, la aplicación estará disponible en: <a href="http://localhost:8000/tareas">http://localhost:8000/tareas</a></p>
+    <h2>🔹 Funcionalidades</h2>
+    <ul>
+        <li>Crear nuevas tareas</li>
+        <li>Editar tareas existentes</li>
+        <li>Eliminar tareas</li>
+        <li>Interfaz moderna con TailwindCSS</li>
+        <li>Layout responsivo (móvil y escritorio)</li>
+    </ul>
+    <h2>🔹 Estructura del proyecto</h2>
+    <pre><code>
+app/             -> Lógica de Laravel
+resources/views/ -> Vistas Blade
+public/css/      -> CSS compilado por Tailwind
+routes/web.php   -> Rutas de la aplicación
+    </code></pre>
+    <h2>🔹 Créditos</h2>
+    <ul>
+        <li>Laravel Framework</li>
+        <li>TailwindCSS</li>
+        <li>Inspiración: Proyecto de lista de tareas personalizado</li>
+    </ul>
+</body>
+</html>
