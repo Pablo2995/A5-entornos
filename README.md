@@ -110,4 +110,12 @@ routes/web.php   -> Rutas de la aplicación
         <li>Inspiración: Proyecto de lista de tareas personalizado</li>
     </ul>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+
+
+
+>>>>>>> c217476ab9006ee5afeb1d377f20be86d1fe41e5
