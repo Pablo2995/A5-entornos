@@ -1,78 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-3xl mx-auto">
-    <!-- Formulario nueva tarea -->
-    <form action="{{ route('tareas.store') }}" method="POST" class="mb-6 flex flex-col md:flex-row gap-3">
-        @csrf
-        <input type="text" name="titulo" placeholder="Título de la tarea" class="flex-1 p-3 rounded shadow border focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-        <input type="text" name="descripcion" placeholder="Descripción (opcional)" class="flex-1 p-3 rounded shadow border focus:outline-none focus:ring-2 focus:ring-purple-400">
-        <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded shadow hover:bg-purple-700 transition duration-200">Añadir</button>
-    </form>
+<div class="max-w-3xl mx-auto p-6 bg-white rounded shadow mt-6">
+    <h1 class="text-2xl font-bold mb-4">📋 Mi Lista de Tareas</h1>
 
     @if(session('success'))
-        <div class="mb-4 p-3 bg-green-200 text-green-800 rounded shadow">
+        <div class="bg-green-100 text-green-700 p-2 rounded mb-4">
             {{ session('success') }}
         </div>
     @endif
 
+    <!-- Formulario nueva tarea -->
+    <form action="{{ route('tareas.store') }}" method="POST" class="mb-6 space-y-2">
+        @csrf
+        <div class="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
+            <input type="text" name="titulo" placeholder="Título" class="border p-2 rounded w-full" required>
+            <input type="text" name="categoria" placeholder="Categoría" class="border p-2 rounded w-full">
+            <select name="prioridad" class="border p-2 rounded w-full">
+                <option value="alta">Alta</option>
+                <option value="media" selected>Media</option>
+                <option value="baja">Baja</option>
+            </select>
+            <input type="date" name="fecha_limite" class="border p-2 rounded w-full">
+        </div>
+        <textarea name="descripcion" placeholder="Descripción (opcional)" class="border p-2 rounded w-full mt-2"></textarea>
+        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">➕ Agregar Tarea</button>
+    </form>
+
     <!-- Lista de tareas -->
-    <div class="grid gap-4">
+    <div class="space-y-2">
         @foreach($tareas as $tarea)
-        <div class="bg-white p-4 rounded-lg shadow flex justify-between items-center hover:shadow-lg transition duration-200">
-            <div class="flex items-center gap-3">
+        <div class="flex justify-between items-center border p-2 rounded hover:bg-gray-50 transition">
+            <div>
+                <h2 class="font-bold @if($tarea->completada) line-through text-gray-400 @endif">{{ $tarea->titulo }}</h2>
+                <p class="text-sm text-gray-500">{{ $tarea->categoria ?? 'Sin categoría' }} - {{ $tarea->prioridad }}</p>
+                @if($tarea->descripcion)
+                    <p class="text-gray-700">{{ $tarea->descripcion }}</p>
+                @endif
+            </div>
+            <div class="flex space-x-2">
+                <!-- Toggle completada -->
                 <form action="{{ route('tareas.toggle', $tarea) }}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <input type="checkbox" onChange="this.form.submit()" {{ $tarea->completed ? 'checked' : '' }} class="h-5 w-5 accent-purple-600">
+                    <button type="submit" class="px-3 py-1 rounded border hover:bg-gray-100 transition">
+                        @if($tarea->completada) ✅ @else ⬜ @endif
+                    </button>
                 </form>
-                <div>
-                    <span class="{{ $tarea->completed ? 'line-through text-gray-400' : 'text-gray-900' }} font-semibold text-lg">{{ $tarea->titulo }}</span>
-                    @if($tarea->descripcion)
-                        <p class="{{ $tarea->completed ? 'line-through text-gray-400' : 'text-gray-600' }} text-sm">{{ $tarea->descripcion }}</p>
-                    @endif
-                </div>
-            </div>
-            <div class="flex gap-2">
-                <button onclick="editTarea('{{ $tarea->id }}','{{ $tarea->titulo }}','{{ $tarea->descripcion }}')" class="px-3 py-1 bg-yellow-400 rounded hover:bg-yellow-500 text-white text-sm transition">Editar</button>
-                <form action="{{ route('tareas.destroy', $tarea) }}" method="POST">
+
+                <!-- Editar -->
+                <a href="{{ route('tareas.edit', $tarea) }}" class="px-3 py-1 rounded border hover:bg-gray-100 transition">✏️</a>
+
+                <!-- Eliminar -->
+                <form action="{{ route('tareas.destroy', $tarea) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar esta tarea?');">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="px-3 py-1 bg-red-500 rounded hover:bg-red-600 text-white text-sm transition">Eliminar</button>
+                    <button type="submit" class="px-3 py-1 rounded border hover:bg-red-100 hover:text-red-700 transition">🗑</button>
                 </form>
             </div>
         </div>
         @endforeach
     </div>
 </div>
-
-<!-- Modal edición -->
-<div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4 text-purple-700">Editar Tarea</h2>
-        <form id="editForm" method="POST">
-            @csrf
-            @method('PUT')
-            <input type="text" name="titulo" id="editTitulo" class="w-full p-3 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-            <input type="text" name="descripcion" id="editDescripcion" class="w-full p-3 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400">
-            <div class="flex justify-end gap-2">
-                <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</button>
-                <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Guardar</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<script>
-function editTarea(id, titulo, descripcion){
-    document.getElementById('editModal').classList.remove('hidden');
-    document.getElementById('editTitulo').value = titulo;
-    document.getElementById('editDescripcion').value = descripcion;
-    document.getElementById('editForm').action = '/tareas/' + id;
-}
-
-function closeModal(){
-    document.getElementById('editModal').classList.add('hidden');
-}
-</script>
 @endsection

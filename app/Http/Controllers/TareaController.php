@@ -18,10 +18,23 @@ class TareaController extends Controller
         $request->validate([
             'titulo' => 'required|string|max:255',
             'descripcion' => 'nullable|string',
+            'prioridad' => 'required|in:alta,media,baja',
+            'categoria' => 'nullable|string|max:255',
+            'fecha_limite' => 'nullable|date',
+            'completada' => 'boolean',
         ]);
 
-        Tarea::create($request->all());
-        return redirect()->back()->with('success', 'Tarea creada correctamente.');
+        $data = $request->all();
+        $data['completada'] = $request->has('completada');
+
+        Tarea::create($data);
+
+        return redirect()->route('tareas.index')->with('success', 'Tarea creada correctamente.');
+    }
+
+    public function edit(Tarea $tarea)
+    {
+        return view('tareas.edit', compact('tarea'));
     }
 
     public function update(Request $request, Tarea $tarea)
@@ -29,22 +42,30 @@ class TareaController extends Controller
         $request->validate([
             'titulo' => 'required|string|max:255',
             'descripcion' => 'nullable|string',
+            'prioridad' => 'required|in:alta,media,baja',
+            'categoria' => 'nullable|string|max:255',
+            'fecha_limite' => 'nullable|date',
+            'completada' => 'boolean',
         ]);
 
-        $tarea->update($request->all());
-        return redirect()->back()->with('success', 'Tarea actualizada correctamente.');
+        $data = $request->all();
+        $data['completada'] = $request->has('completada');
+
+        $tarea->update($data);
+
+        return redirect()->route('tareas.index')->with('success', 'Tarea actualizada correctamente.');
     }
 
     public function destroy(Tarea $tarea)
     {
         $tarea->delete();
-        return redirect()->back()->with('success', 'Tarea eliminada correctamente.');
+        return redirect()->route('tareas.index')->with('success', 'Tarea eliminada correctamente.');
     }
 
     public function toggle(Tarea $tarea)
     {
-        $tarea->completed = !$tarea->completed;
+        $tarea->completada = !$tarea->completada;
         $tarea->save();
-        return redirect()->back();
+        return redirect()->route('tareas.index');
     }
 }
