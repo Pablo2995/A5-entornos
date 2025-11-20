@@ -8,6 +8,7 @@
     {{-- Importa el CSS compilado por Vite, no asset() --}}
     @vite('resources/css/app.css')
 </head>
+
 <body class="bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 min-h-screen font-sans">
 
     <header class="bg-white shadow p-4 sticky top-0 z-10">
@@ -23,4 +24,11 @@
     </footer>
 
 </body>
+<footer class="text-center py-4 text-gray-600">
+    <a href="https://github.com/Pablo2995/A5-entornos"
+       target="_blank"
+       class="text-blue-600 hover:text-blue-800 underline">
+        📁 Ver repositorio en GitHub
+    </a>
+</footer>
 </html>

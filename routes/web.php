@@ -2,16 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareaController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Aquí definimos todas las rutas de la aplicación de tareas.
-|
-*/
-
+// Aquí definimos todas las rutas de la aplicación de tareas.
 // Redirige la raíz al listado de tareas
 Route::get('/', function () {
     return redirect()->route('tareas.index');
